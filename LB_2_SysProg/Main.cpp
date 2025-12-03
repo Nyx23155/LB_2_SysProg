@@ -12,7 +12,7 @@ HINSTANCE hInst;
 LPCTSTR szWindowClass = L"Lab2Variant7";
 LPCTSTR szTitle = L"Лабораторна робота №2 - Варіант 7";
 
-const int SQUARE_SIZE = 80;
+const int SQUARE_SIZE = 120;
 
 // Структура для зберігання інформації про квадрат
 struct Square {
@@ -71,7 +71,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
     wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-    wcex.lpszMenuName = MAKEINTRESOURCE(ID_FUNCTIONS_SWAP);  // Меню з ресурсів
+    wcex.lpszMenuName = MAKEINTRESOURCE(IDR_MENU1);// Меню з ресурсів
     wcex.lpszClassName = szWindowClass;
     wcex.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
@@ -160,11 +160,10 @@ COLORREF GetInverseColor(COLORREF color)
     int g = GetGValue(color);
     int b = GetBValue(color);
 
-    // Обчислення протилежного кольору відносно 122
-    // Формула: новий_колір = 255 - старий_колір + 122
-    r = 255 - r + 122;
-    g = 255 - g + 122;
-    b = 255 - b + 122;
+    // Обчислення протилежного кольору
+    r = 255 - r;
+    g = 255 - g;
+    b = 255 - b;
 
     // Обмеження значень в межах 0-255
     r = max(0, min(255, r));
