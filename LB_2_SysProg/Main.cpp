@@ -9,8 +9,8 @@
 
 // Глобальні змінні
 HINSTANCE hInst;
-LPCTSTR szWindowClass = "Lab2Variant7";
-LPCTSTR szTitle = "Лабораторна робота №2 - Варіант 7";
+LPCTSTR szWindowClass = L"Lab2Variant7";
+LPCTSTR szTitle = L"Лабораторна робота №2 - Варіант 7";
 
 const int SQUARE_SIZE = 80;
 
@@ -238,7 +238,7 @@ void DrawSquares(HDC hdc, int cols, int rows)
             int g = GetGValue(sq->color);
             int b = GetBValue(sq->color);
 
-            wsprintf(text, "(%d;%d)\nRGB(%d,%d,%d)",
+            wsprintf(text, L"(%d;%d)\nRGB(%d,%d,%d)",
                 sq->originalX, sq->originalY, r, g, b);
 
             // Встановлюємо протилежний колір тексту відносно 122
